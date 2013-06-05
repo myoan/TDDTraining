@@ -1,4 +1,5 @@
 #include <CppUTest/CommandLineTestRunner.h>
+#include "LightControllerSpy.h"
 
 TEST_GROUP(LightSchedulerTestGroup) {
 	void setup() {

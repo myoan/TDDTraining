@@ -16,11 +16,10 @@ SET(CMAKE_C_FLAGS_DEBUG        "${CMAKE_CXX_FLAGS} -O0 -g3")
 SET(CMAKE_C_FLAGS_COMPRESSED   "${CMAKE_CXX_FLAGS} -Os -g0")
 
 set(SRC_DIR
-	test/main.cpp
+	test/HomeAutomation/LightSchedulerTest.cpp
 )
 
 set(LIGHTSCEDULER_HOMEDIR ${CMAKE_CURRENT_SOURCE_DIR})
-message(${LIGHTSCEDULER_HOMEDIR})
 
 set(INCLUDE_DIR
 	${LIGHTSCEDULER_HOMEDIR}/include
@@ -32,7 +31,7 @@ add_executable(${PROJECT_NAME} ${SRC_DIR})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
 set(ExtraLibs)
-find_library(HAVE_CPPUTEST NAMES cpputest)
+find_library(HAVE_CPPUTEST NAMES CppUTest)
 
 if(HAVE_CPPUTEST)
 	set(ExtraLibs ${ExtraLibs} ${HAVE_CPPUTEST})

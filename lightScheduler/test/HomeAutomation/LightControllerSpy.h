@@ -9,3 +9,8 @@ enum {
 
 extern int LightControllerSpy_GetLastId();
 extern int LightControllerSpy_GetLastState();
+
+extern void LightController_Create();
+extern void LightController_Destroy();
+extern void LightController_On(int id);
+extern void LightController_Off(int id);

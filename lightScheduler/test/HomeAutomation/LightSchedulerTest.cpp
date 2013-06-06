@@ -1,8 +1,12 @@
 #include <CppUTest/CommandLineTestRunner.h>
+extern "C"
+{
 #include "LightControllerSpy.h"
+}
 
 TEST_GROUP(LightSchedulerTestGroup) {
 	void setup() {
+		LightController_Create();
 	}
 	void teardown() {
 	}

@@ -17,6 +17,8 @@ SET(CMAKE_C_FLAGS_COMPRESSED   "${CMAKE_CXX_FLAGS} -Os -g0")
 
 set(SRC_DIR
 	test/HomeAutomation/LightSchedulerTest.cpp
+	test/HomeAutomation/LightControllerSpyTest.cpp
+	test/HomeAutomation/LightControllerSpy.c
 )
 
 set(LIGHTSCEDULER_HOMEDIR ${CMAKE_CURRENT_SOURCE_DIR})

@@ -3,7 +3,12 @@
 static int lastId;
 static int lastState;
 
-void LightController_Create(void) {
+void LightController_Create() {
+	lastId = LIGHT_ID_UNKNOWN;
+	lastState = LIGHT_STATE_UNKNOWN;
+}
+
+void LightController_Destroy() {
 	lastId = LIGHT_ID_UNKNOWN;
 	lastState = LIGHT_STATE_UNKNOWN;
 }

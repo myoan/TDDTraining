@@ -13,14 +13,26 @@ TEST_GROUP(LightControllerSpy)
 	void teardown() {
 		LightController_Destroy();
 	}
-}
+};
 
 TEST(LightControllerSpy, Create) {
 	LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
 	LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
 
-TEST(LightControllerSpy, RememberTheLastLightIdControlled) {
+TEST(LightControllerSpy, On) {
+	LightController_On(10);
 	LONGS_EQUAL(10, LightControllerSpy_GetLastId());
-	LONGS_EQUAL(LIGHT_OK, LightControllerSpy_GetLastState());
+}
+
+TEST(LightControllerSpy, Off) {
+	LightController_On(10);
+	LightController_Off(10);
+	LONGS_EQUAL(LIGHT_OFF, LightControllerSpy_GetLastState());
+}
+
+TEST(LightControllerSpy, RememberTheLastLightIdControlled) {
+	LightController_On(10);
+	LONGS_EQUAL(10, LightControllerSpy_GetLastId());
+	LONGS_EQUAL(LIGHT_ON, LightControllerSpy_GetLastState());
 }
